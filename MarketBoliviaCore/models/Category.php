@@ -11,7 +11,8 @@ class Category extends BaseObject {
     }
 
     public function toArray() {
-        return array("id" => $this->id, "code" => $this->code, "name" => $this->name, "parentId" => $this->parentId);
+
+        array("id" => $this->id, "code" => $this->code, "name" => $this->name, "parentId" => $this->parentId);
     }
 
     public function validate() {
