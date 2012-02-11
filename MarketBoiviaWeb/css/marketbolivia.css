@@ -1,0 +1,12 @@
+/*---------  Menu  ---------*/
+#tabSearch {
+    width: 300px;
+    float: left;
+    padding: 20px;
+}
+
+.title-debug {
+    color: #00FF00;
+    padding: 5px;
+    border-bottom: 1px solid #00FF00;
+}

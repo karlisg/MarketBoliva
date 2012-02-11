@@ -1,0 +1,9 @@
+The project Market Bolivia is a modular project written on PHP object oriented.
+
+This project has 3 modules(at the moment):
+
+    1) Base module with the bussiness logic and other utilities => MarketBoliviaCore
+    2) Admin module to administrate all the system with an admin role => MarketBoliviaAdmin
+    3) Web module for users to interact with the virtual market => MarketBolivaWeb
+
+

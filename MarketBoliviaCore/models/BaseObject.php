@@ -1,6 +1,6 @@
 <?php
 
-class BaseObject
+abstract class BaseObject
 {
     private $status;
     private $creationDate;

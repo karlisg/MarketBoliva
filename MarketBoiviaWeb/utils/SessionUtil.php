@@ -9,7 +9,7 @@ class SessionUtil {
     }
 
     public static function setMenu($page) {
-        $_SESSION['menu']['current'] = $page;
+        $_SESSION['menu'] = $page;
     }
 
     public static function getTitle() {
