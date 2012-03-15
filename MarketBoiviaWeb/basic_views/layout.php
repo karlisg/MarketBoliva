@@ -28,7 +28,6 @@
 
                 $.getScript("js/jquery.mobile-1.0.min.js", function(data, textStatus){
                     $("#page").show();
-                    console.log('Load was performed.');
                 }); 
             });
         </script>

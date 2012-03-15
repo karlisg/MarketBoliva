@@ -1,11 +1,10 @@
 <?php
-
 require_once('clssConnection.php');
+require_once('log/clssLog.php');
 Connection::getInstance();
 
 class Query
 {
-
     private $query;
     private $result;
     public static $log;
@@ -13,6 +12,9 @@ class Query
     public function __construct($query)
     {
         $this->query = $query;
+
+        if (Query::$log == null)
+            Query::$log = new Log();
     }
 
     public function getQuery()
@@ -20,18 +22,10 @@ class Query
         return $this->query;
     }
 
-    private function addLog()
-    {
-        if (Query::$log == null)
-            Query::$log = array();
-
-        array_push(Query::$log, $this->query);
-    }
-
     public function run()
     {
         $this->result = pg_query($this->query) or die("Query:" . $this->query . " failed by " . pg_error());
-        $this->addLog();
+        Query::$log->addLog($this->query);
         return $this->result;
     }
 
@@ -155,24 +149,13 @@ class Query
 
     public static function cleanLog()
     {
-        Query::$log = null;
-        Query::$log = array();
+        Query::$log->cleanLog();
     }
 
     public static function saveLog()
     {
-        Query::saveLogToFile(date("Ymd") . ".sql");
+        Query::$log->saveLogToFile(date("Ymd") . ".sql");
     }
-
-    public static function saveLogToFile($file)
-    {
-        $fp = fopen($file, "w");
-        foreach (Query::$log as $line)
-            $write = fputs($fp, $line);
-
-        fclose($fp);
-    }
-
 }
 
 ?>

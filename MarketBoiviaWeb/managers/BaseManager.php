@@ -1,5 +1,4 @@
 <?php
-require_once("db/clssQuery.php");
 class BaseManager
 {
     public static function convertObjectsToArray($class, $objects)

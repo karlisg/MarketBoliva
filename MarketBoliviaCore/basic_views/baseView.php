@@ -36,5 +36,4 @@ abstract class BaseView
 
     public abstract function show();
 }
-
 ?>

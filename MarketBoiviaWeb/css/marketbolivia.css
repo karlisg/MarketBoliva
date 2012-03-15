@@ -10,3 +10,19 @@
     padding: 5px;
     border-bottom: 1px solid #00FF00;
 }
+
+.title-error {
+    color: #FF0000;
+    padding: 5px;
+    border-bottom: 1px solid #FF0000;
+}
+
+.div-cmd {
+    background-color: #000;
+    color: #FFF;
+    font-weight: normal;
+    font-family: 'Courier New';
+    font-size: 12px;
+    padding: 10px;
+    text-shadow: none;
+}

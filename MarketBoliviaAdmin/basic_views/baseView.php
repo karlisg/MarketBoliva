@@ -1,7 +1,6 @@
 <?php
 require_once("utils/SessionUtil.php");
 require_once("utils/LogUtil.php");
-require_once("db/clssQuery.php");
 abstract class BaseView
 {
     private $name;
@@ -15,10 +14,11 @@ abstract class BaseView
 
     public function init()
     {
+        require_once("db/clssQuery.php");
         require_once("basic_views/layout.php");
         ?>
 
-    <div id="content" style="display:none;">
+
         <?php
         try {
             $this->show();
@@ -29,7 +29,6 @@ abstract class BaseView
             require_once("basic_views/error.php");
         }
         ?>
-    </div>
 
     <?php
     }
