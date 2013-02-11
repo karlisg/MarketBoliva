@@ -12,11 +12,9 @@ class Index extends BaseView
     {
 
         ?>
-
         <h3> This the home page </h3>
         <br/>
-
-    <?php
+        <?php
     }
 }
 new Index();
